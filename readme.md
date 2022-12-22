@@ -4,6 +4,14 @@ A demographic page to serve ANPR real time result
 
 ## Getting started
 
-Open Terminal > npm i (if not installed yet) > node index.js
+Open Terminal > node index.js
+Open another Terminal > cd client > node index.js
 
-Open another Terminal > cd client > npm i (if not installed yet) > node index.js
+If there is no livestream,try search mnt/anpr in '/' folder.
+
+If there is no mnt/anpr,
+Open Terminal > mkdir /mnt/anpr
+
+Open another Terminal > sudo nano /etc/fstab
+Add line to the last line > # anpr sharefolder
+//172.17.0.143/anpr  /mnt/anpr  cifs  username=rnd,password=recogine,uid=1000,gid=1000,iocharset=utf8,x-systemd.mount-timeout=10,x-systemd.device-timeout=10  0  0
