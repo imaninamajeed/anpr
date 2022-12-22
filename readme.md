@@ -10,6 +10,7 @@ If it is not working > npm i > node index.js
 Open another Terminal > cd client > npm start
 If it is not working > npm i > npm start
 
+
 If there is no livestream,try search mnt/anpr in '/' folder.
 
 If there is no mnt/anpr,
