@@ -8,6 +8,7 @@ Open Terminal > node index.js
 
 Open another Terminal > cd client > node index.js
 
+
 If there is no livestream,try search mnt/anpr in '/' folder.
 
 If there is no mnt/anpr,
