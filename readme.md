@@ -4,9 +4,11 @@ A demographic page to serve ANPR real time result
 
 ## Getting started
 
-Open Terminal > node index.js
+Open Terminal > node index.js 
+If it is not working > npm i > node index.js
 
-Open another Terminal > cd client > node index.js
+Open another Terminal > cd client > npm start
+If it is not working > npm i > npm start
 
 If there is no livestream,try search mnt/anpr in '/' folder.
 
