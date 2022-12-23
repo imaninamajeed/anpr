@@ -18,7 +18,7 @@ import "@fontsource/poppins";
 const client = mqtt.connect("ws://172.17.0.216:8080/");
 
 export default function App() {
-  const [offloader, setoffloader] = useState("null");
+  const [offloader, setOffloader] = useState("null");
   const [topic, setTopic] = useState("null");
   var msg, msgJSON;
   //fetch data using useEffect
@@ -26,10 +26,10 @@ export default function App() {
     client.subscribe("offloader/COM143/01/data");
     client.on("message", function (topic, message) {
       if (topic === "offloader/COM143/01/data") {
-        setoffloader(message);
+        setOffloader(message);
         msg = message.toString();
         msgJSON = JSON.parse(msg);
-        setoffloader(msgJSON);
+        setOffloader(msgJSON);
         setTopic(topic);
       }
     });
