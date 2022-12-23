@@ -20,7 +20,7 @@ const client = mqtt.connect("ws://172.17.0.216:8080/");
 export default function App() {
   const [offloader, setOffloader] = useState("null");
   const [topic, setTopic] = useState("null");
-  var msg, msgJSON;
+  let msg, msgJSON;
   //fetch data using useEffect
   useEffect(() => {
     client.subscribe("offloader/COM143/01/data");
