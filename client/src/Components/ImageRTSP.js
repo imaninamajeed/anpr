@@ -1,9 +1,8 @@
-import "./LiveResult.css";
 export default function ImageRTSP(props) {
   const path = props.path;
 
   return (
-    <div className="LiveResult">
+    <div>
       <h1>Live Result</h1>
       <div className="card text-white bg-dark mb-3">
         <div className="card-body">

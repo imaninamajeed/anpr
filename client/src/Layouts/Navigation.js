@@ -1,5 +1,10 @@
-import "./Navigation.css";
-import { Outlet, Link } from "react-router-dom"; // <Outlet> - Just to notify React to render the route; // <Link> = <a>
+//CSS libraries
+import "../Assets/CSS/Navigation.css";
+
+//Node Package Manager (NPM) libraries
+// <Outlet> - Just to notify React to render the route;
+// <Link> = <a>
+import { Outlet, Link } from "react-router-dom";
 
 function Navigation() {
   return (

@@ -1,16 +1,16 @@
-//JavaScript libraries
+//Node Package Manager (NPM) libraries
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import mqtt from "mqtt/dist/mqtt";
 
 //Components
-import Navigation from "./Navigation";
-import LiveResult from "./LiveResult";
-import UserManual from "./UserManual";
-import NotFound from "./NotFound";
+import Navigation from "./Layouts/Navigation";
+import LiveResult from "./Pages/LiveResult";
+import UserManual from "./Pages/UserManual";
+import NotFound from "./Pages/NotFound";
 
 //CSS libraries
-import "./App.css";
+import "./Assets/CSS/App.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // frontend toolkit, install bootstrap before use @terminal: 'npm i bootstrap@5.2.2'
 import "@fontsource/poppins";
 

@@ -1,5 +1,3 @@
-import "./LiveResult.css";
-
 export default function ImageLP(props) {
   const path = props.path;
   const plate = props.plate;
