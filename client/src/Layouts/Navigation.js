@@ -21,6 +21,11 @@ function Navigation() {
             </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/HistoricalData">
+              Historical Data
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="/UserManual">
               User Manual
             </Link>
