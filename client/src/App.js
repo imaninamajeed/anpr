@@ -6,6 +6,7 @@ import mqtt from "mqtt/dist/mqtt";
 //Components
 import Navigation from "./Layouts/Navigation";
 import LiveResult from "./Pages/LiveResult";
+import HistoricalData from "./Pages/HistoricalData";
 import UserManual from "./Pages/UserManual";
 import NotFound from "./Pages/NotFound";
 
@@ -43,6 +44,10 @@ export default function App() {
         <Route
           path="/UserManual"
           element={<UserManual data={offloader} topic={topic} />}
+        />{" "}
+        <Route
+          path="/HistoricalData"
+          element={<HistoricalData data={offloader} topic={topic} />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
