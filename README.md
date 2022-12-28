@@ -3,7 +3,7 @@ A demographic page to serve ANPR real time result
 
 # Technical Specification
 ## Hardware Specification
-### Device Requirements
+<!-- ### Device Requirements -->
 ### Supported Web Browser
 - Firefox
 - Google Chrome
@@ -50,5 +50,5 @@ e. Type in **sudo nano /etc/fstab**
 f. After entering NANO GNU text editor, type in <pre>#anpr sharefolder
 //172.17.0.143/anpr  /mnt/anpr  cifs  username=rnd,password=recogine,uid=1000,gid=1000,iocharset=utf8,x-systemd.mount-timeout=10,x-systemd.device-timeout=10  0  0</pre>
 
-# Recommendation
-# FAQs
+<!-- # Recommendation -->
+<!-- # FAQ -->
