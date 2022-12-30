@@ -17,19 +17,17 @@ import "@fontsource/poppins";
 
 //connect client:MQTT
 const client = mqtt.connect("ws://172.17.0.216:8080/");
-
 export default function App() {
   const [offloader, setOffloader] = useState("null");
   const [topic, setTopic] = useState("null");
-  let msg, msgJSON;
+  let msgJSON;
   //fetch data using useEffect
   useEffect(() => {
     client.subscribe("offloader/COM143/01/data");
     client.on("message", function (topic, message) {
+      console.log("topic", topic);
+      console.log("message", message);
       if (topic === "offloader/COM143/01/data") {
-        setOffloader(message);
-        msg = message.toString();
-        msgJSON = JSON.parse(msg);
         setOffloader(msgJSON);
         setTopic(topic);
       }
