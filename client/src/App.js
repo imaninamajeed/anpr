@@ -6,6 +6,7 @@ import mqtt from "mqtt/dist/mqtt";
 //Components
 import Navigation from "./Layouts/Navigation";
 import LiveResult from "./Pages/LiveResult";
+import HistoricalData from "./Pages/HistoricalData";
 import UserManual from "./Pages/UserManual";
 import NotFound from "./Pages/NotFound";
 
@@ -16,19 +17,18 @@ import "@fontsource/poppins";
 
 //connect client:MQTT
 const client = mqtt.connect("ws://172.17.0.216:8080/");
-
 export default function App() {
   const [offloader, setOffloader] = useState("null");
   const [topic, setTopic] = useState("null");
-  let msg, msgJSON;
+  let msgJSON;
   //fetch data using useEffect
   useEffect(() => {
     client.subscribe("offloader/COM143/01/data");
     client.on("message", function (topic, message) {
+      console.log("topic", topic);
+      console.log("message", message);
       if (topic === "offloader/COM143/01/data") {
-        setOffloader(message);
-        msg = message.toString();
-        msgJSON = JSON.parse(msg);
+        msgJSON = JSON.parse(message);
         setOffloader(msgJSON);
         setTopic(topic);
       }
@@ -43,6 +43,10 @@ export default function App() {
         <Route
           path="/UserManual"
           element={<UserManual data={offloader} topic={topic} />}
+        />{" "}
+        <Route
+          path="/HistoricalData"
+          element={<HistoricalData data={offloader} />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
