@@ -28,6 +28,7 @@ export default function App() {
       console.log("topic", topic);
       console.log("message", message);
       if (topic === "offloader/COM143/01/data") {
+        msgJSON = JSON.parse(message);
         setOffloader(msgJSON);
         setTopic(topic);
       }
@@ -45,7 +46,7 @@ export default function App() {
         />{" "}
         <Route
           path="/HistoricalData"
-          element={<HistoricalData data={offloader} topic={topic} />}
+          element={<HistoricalData data={offloader} />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
