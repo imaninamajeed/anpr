@@ -27,7 +27,7 @@ export default function LiveResult(props) {
           </tr>
         </thead>
         <tbody>
-          {mqttGlobalClientData.map((mqttData) => (
+          {mqttGlobalClientData.reverse().map((mqttData) => (
             <tr>
               <th scope="row" key={mqttData}>
                 {mqttData.createdAt}
