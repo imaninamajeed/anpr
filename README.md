@@ -31,7 +31,7 @@ A demographic page to serve ANPR real time result
 
 **Step 1**   
 a. Open Terminal   
-b. Type in **index.js**
+b. Type in **node index.js**
 > **Note:** If *index.js* &nbsp; is not running, type  **npm i**  and repeat **Step 1.b.**
 
 **Step 2**   
@@ -49,6 +49,7 @@ d. Open another Terminal
 e. Type in **sudo nano /etc/fstab**  
 f. After entering NANO GNU text editor, type in <pre>#anpr sharefolder
 //172.17.0.143/anpr  /mnt/anpr  cifs  username=rnd,password=recogine,uid=1000,gid=1000,iocharset=utf8,x-systemd.mount-timeout=10,x-systemd.device-timeout=10  0  0</pre>
+g. Type **sudo mount -a**
 
 <!-- # Recommendation -->
 <!-- # FAQ -->
