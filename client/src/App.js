@@ -15,15 +15,21 @@ import "./Assets/CSS/App.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // frontend toolkit, install bootstrap before use @terminal: 'npm i bootstrap@5.2.2'
 import "@fontsource/poppins";
 
+const REACT_APP_MQTT_SERVER = process.env.REACT_APP_MQTT_SERVER || "ws://172.17.0.216:8080/";
+const REACT_APP_MQTT_DATA_TOPIC = process.env.REACT_APP_MQTT_DATA_TOPIC || "offloader/COM143/01/data";
+console.log("REACT_APP_MQTT_SERVER", REACT_APP_MQTT_SERVER)
+console.log("REACT_APP_MQTT_DATA_TOPIC", REACT_APP_MQTT_DATA_TOPIC)
+
 //connect client:MQTT
-const client = mqtt.connect("ws://172.17.0.216:8080/");
+const client = mqtt.connect(REACT_APP_MQTT_SERVER);
 export default function App() {
   const [offloader, setOffloader] = useState("null");
   const [topic, setTopic] = useState("null");
   let msgJSON;
   //fetch data using useEffect
   useEffect(() => {
-    client.subscribe("offloader/COM143/01/data");
+    client.subscribe(REACT_APP_MQTT_DATA_TOPIC);
+
     client.on("message", function (topic, message) {
       console.log("topic", topic);
       console.log("message", message);
