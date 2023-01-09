@@ -22,6 +22,8 @@ console.log("REACT_APP_MQTT_DATA_TOPIC", REACT_APP_MQTT_DATA_TOPIC)
 
 //connect client:MQTT
 const client = mqtt.connect(REACT_APP_MQTT_SERVER);
+
+console.log("Client connected!");
 export default function App() {
   const [offloader, setOffloader] = useState("null");
   const [topic, setTopic] = useState("null");
@@ -30,6 +32,7 @@ export default function App() {
   useEffect(() => {
     client.subscribe(REACT_APP_MQTT_DATA_TOPIC);
 
+    console.log("REACT_APP_MQTT_DATA_TOPIC", REACT_APP_MQTT_DATA_TOPIC);
     client.on("message", function (topic, message) {
       console.log("topic", topic);
       console.log("message", message);
