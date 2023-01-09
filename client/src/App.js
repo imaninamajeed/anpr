@@ -34,7 +34,7 @@ export default function App() {
 
     console.log("REACT_APP_MQTT_DATA_TOPIC", REACT_APP_MQTT_DATA_TOPIC);
     client.on("message", function (topic, message) {
-      console.log("topic", topic);
+      console.log("Receive message!");
       console.log("message", message);
       if (topic === "offloader/COM143/01/data") {
         msgJSON = JSON.parse(message);

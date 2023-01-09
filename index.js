@@ -12,7 +12,7 @@ app.use(cors());
 
 app.get("/file", function (req, res) {
   const path = REACT_APP_DATA_PARENT_DIR + req.query.partdirectory; // linux - single slash in front
-  console.log("Path", path);
+  // console.log("Path", path);
   res.sendFile(path);
 });
 
