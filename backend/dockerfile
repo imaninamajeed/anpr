@@ -1,0 +1,12 @@
+##########################################
+FROM node:16.19.0-alpine as backend
+
+WORKDIR /root
+
+COPY index.js package-lock.json package.json /root/
+
+# make sure you have network to install those dependency
+# npm set progress=false for speed up the install, since even enable, can't see the progress in the docker tool.
+# More discussion is here https://github.com/goldbergyoni/nodebestpractices/issues/682
+RUN npm set progress=false \
+	&& npm ci
