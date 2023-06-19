@@ -14,7 +14,6 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /mnt/anpr:/mnt/anpr:ro
-      - ./backend/index.js:/root/index.js:ro
     # cpuset: "0,2"
     logging:
       options:
