@@ -9,7 +9,7 @@ services:
     networks:
       - net
     ports:
-      - 4567:4567
+      - 20021:4567
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -34,7 +34,7 @@ services:
     networks:
       - net
     ports:
-      - 3000:3000
+      - 20020:3000
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
