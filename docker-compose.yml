@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   backend:
-    image: recogine/recocloud:backend-v0.1.0-deploy
+    image: "${COMPOSE_PROJECT_NAME}/${project_dirname}-backend:latest"
     restart: unless-stopped
     environment:
       REACT_APP_DATA_PARENT_DIR: "/mnt/anpr/"
@@ -22,7 +22,7 @@ services:
     command: "npm start"
 
   frontend:
-    image: recogine/recocloud:frontend-v0.1.0-deploy
+    image: "${COMPOSE_PROJECT_NAME}/${project_dirname}-frontend:latest"
     restart: unless-stopped
     environment:
       # REACT_APP_MQTT_SERVER: "ws://172.17.0.216:8080/"
