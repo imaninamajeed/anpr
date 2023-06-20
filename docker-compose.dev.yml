@@ -1,0 +1,13 @@
+services:
+  backend:
+    volumes:
+      - ./backend/index.js:/root/index.js:ro
+      - ./backend/package-lock.json:/root/package-lock.json:ro
+      - ./backend/package.json:/root/package.json:ro
+
+  frontend:
+    volumes:
+      - ./frontend/src/:/root/src/:ro
+      - ./frontend/public/:/root/public/:ro
+      - ./frontend/package-lock.json:/root/package-lock.json:ro
+      - ./frontend/package.json:/root/package.json:ro
