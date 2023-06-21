@@ -30,7 +30,7 @@ services:
       # REACT_APP_BACKEND_FILE_SERVER: "http://172.17.11.1:4567/"
       REACT_APP_MQTT_SERVER: "ws://${DOCKER_GATEWAY_HOST:-localhost}:8080/"
       REACT_APP_MQTT_DATA_TOPIC: "offloader/GLM-OUT/02/data"
-      REACT_APP_BACKEND_FILE_SERVER: "http://${DOCKER_GATEWAY_HOST:-localhost}:4567/"
+      REACT_APP_BACKEND_FILE_SERVER: "http://${DOCKER_GATEWAY_HOST:-localhost}:20021/"
     networks:
       - net
     ports:
