@@ -123,25 +123,21 @@ sample of docker-compose.yml:
 ```yaml docker-compose.yml
 services:
   backend:
-    image: recogine/recocloud:backend-v0.1.0-deploy
     ...
     volumes:
-      - /mnt/anpr:/mnt/anpr:ro
+      - /home/rnd/rnd/product/anpr/anpr-demographic-page/asset:/mnt/data:ro
     ...
 
   frontend:
-    image: recogine/recocloud:frontend-v0.1.0-deploy
     environment:
-      REACT_APP_MQTT_SERVER: "ws://172.17.0.216:8080/"
-      REACT_APP_MQTT_DATA_TOPIC: "offloader/COM143/01/data"
-      REACT_APP_BACKEND_FILE_SERVER: "http://172.17.11.2:4567/"
+      REACT_APP_MQTT_SERVER: "ws://${DOCKER_GATEWAY_HOST:-localhost}:8080/"
+      REACT_APP_MQTT_DATA_TOPIC: "offloader/GLM-OUT/02/data"
+      REACT_APP_BACKEND_FILE_SERVER: "http://${DOCKER_GATEWAY_HOST:-localhost}:20021/"
     ...
 ```
 
-- **services/backend/image**: Change to your corresponding docker image name and tag number.
-- **services/frontend/image**: Change to your corresponding docker image name and tag number.
 - **services/backend/volumes**:
-  - **`/mnt/anpr:/mnt/anpr:ro`**: The path of the offloader save vehicle image. The syntax is `/PATH/TO/ANPR/DATA:/mnt/anpr:ro`, while the path is the dir that included `data` dir in it. For example the offloader vehicle data is store in `/mnt/hdd/home/rnd/anpr`, then your valie should be look like `/mnt/hdd/home/rnd/anpr:/mnt/anpr:ro`
+  - **`/mnt/anpr:/mnt/data:ro`**: The path of the offloader save vehicle image. The syntax is `/PATH/TO/ANPR/DATA:/mnt/anpr:ro`. For example the offloader vehicle data is store in `/mnt/hdd/home/rnd/anpr`, then your valie should be look like `/mnt/hdd/home/rnd/anpr:/mnt/anpr:ro`
 - **services/frontend/environment**:
   - **`REACT_APP_MQTT_DATA_TOPIC`**: The data topic to subscribe offloader data. Syntax is `offloader/`
 
