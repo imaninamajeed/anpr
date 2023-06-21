@@ -1,8 +1,6 @@
 #!/bin/bash
 
 set -e
-# shellcheck source=/home/rnd/.bashrc
-source ~/.bashrc
 
 echo "Setting up server..."
 # >> ~/.bashrc
@@ -16,5 +14,9 @@ if [[ -z "${DOCKER_GATEWAY_HOST}" ]]; then
 else
     echo "DOCKER_GATEWAY_HOST had been set!"
 fi
+
+# shellcheck source=/home/rnd/.bashrc
+source ~/.bashrc
+
 echo "DOCKER_GATEWAY_HOST is $DOCKER_GATEWAY_HOST"
 echo "Done!"
