@@ -5,7 +5,7 @@ services:
     image: "${COMPOSE_PROJECT_NAME}/${project_dirname}-backend:latest"
     restart: unless-stopped
     environment:
-      REACT_APP_DATA_PARENT_DIR: "/mnt/anpr/"
+      REACT_APP_DATA_PARENT_DIR: "/mnt/data/"
     networks:
       - net
     ports:
@@ -13,7 +13,7 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - /mnt/anpr:/mnt/anpr:ro
+      - /home/rnd/rnd/product/anpr/anpr-demographic-page/asset:/mnt/data:ro
     # cpuset: "0,2"
     logging:
       options:
